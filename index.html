@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bigger-slides</title>
+    <link rel="stylesheet" href="high-bigger-slides.css">
+    <script src="http://o7m41tvmg.bkt.clouddn.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1>
+            Apple-like Gallery
+            <br>
+            <b>Slideshow</b>
+        </h1>
+        <h2>View the <a href="">original tutorial »</a></h2>
+        <div class="slides-wrapper">
+            <div class="slides-window">
+                <img src="https://i.loli.net/2017/10/23/59ed58ce97441.jpg" alt=""><img src="https://i.loli.net/2017/10/23/59ed5b11e1f5d.jpg" alt=""><img src="https://i.loli.net/2017/11/30/5a1fee9b7be5f.jpg" alt=""><img src="https://i.loli.net/2017/11/30/5a1fe4c88dd5c.jpg" alt="">
+            </div>
+            <div class="slides-menu">
+                <ul>
+                    <li style="width: 2px"><a href=""></a></li>
+                    <li class="item active" data-index="0"><a href="javascript:;"><img src="https://i.loli.net/2017/10/23/59ed5b93aee00.png" alt=""></a></li>
+                    <li class="item inact" data-index="1"><a href="javascript:;"><img src="https://i.loli.net/2017/11/30/5a1feeec1b795.png" alt=""></a></li>
+                    <li class="item inact" data-index="2"><a href="javascript:;"><img src="https://i.loli.net/2017/11/30/5a1fef12ec753.png" alt=""></a></li>
+                    <li class="item inact" data-index="3"><a href="javascript:;"><img src="https://i.loli.net/2017/11/30/5a1fef6b47a6c.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p>This is a tutorialzine demo. View the <a href=""> original tutorial</a> to read and download the source files.</p>
+    <p>The gallery features artwork from <a href="">rambocre, pickupjojo</a> and <a href="">codenamebender</a></p>
+    <script>
+        $('.item').on('click',function(){
+            $(this).removeClass('inact').addClass('active').siblings().removeClass('active').addClass('inact')
+            var index = $(this).attr('data-index');
+            var right = index*920
+            $('.slides-window').stop().animate({right:right+'px'},500)
+        })
+    </script>
+</body>
+</html>
